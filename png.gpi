@@ -1,0 +1,13 @@
+set term png enhanced size 1200,800 font 'Times New Roman,32'
+set key top center font 'Times New Roman,20'
+set output "que.png"
+set pointsize 2
+set xlabel "Time (ps)"
+set ylabel "Height (\305)" offset 1
+set key off
+
+# color definitions
+set style line 1 lc rgb '#8b1a0e' pt 1 ps 1 lt 1 lw 2 # --- red
+set style line 2 lc rgb '#5e9c36' pt 6 ps 1 lt 1 lw 2 # --- green
+
+p 'dft_band.txt' w l ls 1 t "DFT", 'set3_md_bands.txt' w l ls 2 t "Set3"
